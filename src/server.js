@@ -8,9 +8,11 @@ const errorHandler = require('./handlers/500');
 const logger = require('./middlewares/logger');
 const validator = require('./middlewares/validator');
 const foodRoutes=require('./routes/food');
+const clothesRouters=require('./routes/clothes');
 
-
+app.use(express.json());
 app.use(foodRoutes);
+app.use(clothesRouters);
 app.use(logger);
 
 function start(port) {

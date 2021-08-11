@@ -20,7 +20,74 @@ describe('my API Server', ()=> {
         expect(response.status).toEqual(404);
     });
 
-
-
-
 });
+
+
+describe('my API Server', ()=> {
+    let obj={
+        clothesName:"Knafa",
+        contryclothes:"Jordan"
+    };
+    let id=-1;
+    it('handles all clothes from database requsest', async () => {
+        // add test
+        const response = await request.get('/clothes'); 
+        expect(response.status).toEqual(200);
+    });
+    it('handles one spicific clothes database request', async () => {
+        // add test
+        const response = await request.get('/clothes/2'); 
+        expect(response.status).toEqual(200);
+    });
+
+    it('handles post for database request', async () => {
+        const response = await request.post('/clothes').send(obj)
+        id=response.body.id;
+        expect(response.status).toEqual(200)
+    });
+    it('handles delet one spicific clothes database request', async () => {
+        // add test
+        const response = await request.delete('/clothes/3');
+        expect(response.status).toEqual(204);
+    });
+    it('handles update spicific clothes database request', async () => {
+        // add test
+        const response = await request.put('/clothes/4');
+        expect(response.status).toEqual(200);
+    });
+});
+
+describe('my API Server', ()=> {
+    let obj={
+        clothesName:"boots",
+        contryclothes:"USA"
+    };
+    let id=-1;
+    it('handles all clothes from database requsest', async () => {
+        // add test
+        const response = await request.get('/clothes'); 
+        expect(response.status).toEqual(200);
+    });
+    it('handles one spicific clothes database request', async () => {
+        // add test
+        const response = await request.get('/clothes/2'); 
+        expect(response.status).toEqual(200);
+    });
+
+    it('handles post for database request', async () => {
+        const response = await request.post('/clothes').send(obj)
+        id=response.body.id;
+        expect(response.status).toEqual(200)
+    });
+    it('handles delet one spicific clothes database request', async () => {
+        // add test
+        const response = await request.delete('/clothes/3');
+        expect(response.status).toEqual(204);
+    });
+    it('handles update spicific clothes database request', async () => {
+        // add test
+        const response = await request.put('/clothes/4');
+        expect(response.status).toEqual(200);
+    });
+});
+

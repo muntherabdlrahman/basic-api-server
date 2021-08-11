@@ -1,16 +1,21 @@
 'use strict';
 
 const clothes=(sequalize, DataTypes)=>{
-    sequalize.define('clothes',{
+   const clothes= sequalize.define('clothes',{
 
         clothesName: {
             type: DataTypes.STRING,
-        allowNull:false
+            allowNull:false
+        // defaultValue:true
     },
     contryclothes:{
         type:DataTypes.STRING,
     }
+
+
+    
 });
+return clothes;
 }
 
 module.exports=clothes;
